@@ -70,3 +70,55 @@ class stack
 	}
 
 };
+
+int main() 
+{
+	stack stack; 
+
+
+	int choice = 0;
+	int value;
+
+	while (choice != 5)
+	{
+		cout << "1. Push\n";
+		cout << "2. Pop\n";
+		cout << "3. Peek\n";
+		cout << "4. Exit\n";
+		cout << "Enter your choice: \n";
+		cin >> choice;
+
+		switch (choice)
+		{
+		case 1:
+			cout << "Enter the value to push: ";
+			cin >> value;
+			stack.push(value); // Push the entered value onto the stack
+			break;
+		case 2:
+			if (!stack.isEmpty()) {
+				stack.pop(); // Pop the top element from the stack
+			}
+			else {
+				cout << "Stack is empty. Cannot pop" << endl;
+			}
+			break;
+		case 3: 
+			if (!stack.isEmpty()) {
+				stack.peek(); // Get the value of the top element
+			}
+			else {
+				cout << "Stack is empty. No top value" << endl;
+			}
+			break;
+		case 4:
+			cout << "Exiting program." << endl;
+			break;
+		default:
+			cout << "Invalid choice. Try again." << endl;
+			break;
+		}
+		cout << endl;
+	}
+	return 0;
+}
